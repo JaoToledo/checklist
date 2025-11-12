@@ -1,73 +1,124 @@
-<<<<<<< HEAD
-# checklist
-=======
-# React + TypeScript + Vite
+## 📌 Sobre o projeto
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um aplicativo simples e eficiente para gerenciar suas tarefas diárias.  
+Feito com **React**, testado com **Vitest**, e documentado com **JSDoc**.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Criar tarefas com título e checklists  
+- 🗂️ Adicionar, editar e remover tarefas  
+- ☑️ Marcar itens do checklist como concluídos  
+- 💾 Salvamento automático no Local Storage 
+- 🧪 Testes unitários com **Vitest**  
+- 📘 Código documentado com **JSDoc**
 
-## Expanding the ESLint configuration
+  
+## ⚙️ Tecnologias utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+React (com Hooks)
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+TypeScript
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Vite
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Vitest + Testing Library (testes unitários e de integração)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+TailwindCSS (estilização)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+ 
+## 🧠 Arquitetura
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
->>>>>>> 9449625 (checklist project)
+O projeto é dividido em componentes funcionais reutilizáveis.
+Cada componente possui documentação interna (JSDoc) e testes unitários.
+
+Principais componentes:
+
+App.tsx → Componente raiz, gerencia o estado global das tarefas.
+
+TaskBar/ → Exibe a lista de tarefas criadas.
+
+TaskModal/ → Modal responsável por criar e editar tarefas.
+
+TaskModal/ModalButtons/ → Botões de ação: Add, Save, Cancel.
+
+SideBarTasks/ → Lista lateral com opções de editar e deletar cada task.
+
+## 🧪 Testes
+
+Os testes foram criados com Vitest e React Testing Library.
+Eles verificam o comportamento real do usuário, incluindo:
+
+Renderização de componentes;
+
+Abertura e fechamento de modais;
+
+Criação, edição e exclusão de tarefas;
+
+Chamadas de callbacks (onAdd, onSave, onDelete, etc.);
+
+Atualização do DOM após interações.
+
+ 
+## 📂 Exemplos de testes:
+
+src/
+ └── components/
+      ├── TaskBar/tests/
+      ├── TaskModal/tests/
+      ├── ModalButtons/tests/
+
+
+## 🚀 Como executar
+
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/task-list-app.git
+
+
+Instale as dependências:
+
+npm install
+
+
+Execute o servidor de desenvolvimento:
+
+npm run dev
+
+
+Rode os testes:
+
+npm run test
+
+## 📸 Demonstração
+
+**Tasks criadas**
+
+<img width="1920" height="1080" alt="{1C7B922C-8984-4E5B-9088-B534C39DD962}" src="https://github.com/user-attachments/assets/c2ed2c34-67ca-4264-acda-9e6720e7f328" />
+<img width="1920" height="1080" alt="{C3B8EFE1-AA77-4269-ABD5-CF7D964EAB49}" src="https://github.com/user-attachments/assets/0fbf2ef7-a1f7-4af7-8e9d-f238fc87f400" />
+
+ **Modal para ciração de tasks**
+
+<img width="1919" height="1080" alt="{E46290FB-64DF-440F-9028-FDC4DB36FAC7}" src="https://github.com/user-attachments/assets/df66775e-de87-4ef4-91d5-83bb98b47b7a" />
+
+## 📚 Documentação interna
+
+O código segue o padrão JSDoc, o que facilita manutenção e leitura.
+Exemplo:
+
+/**
+ * @fileoverview Componente principal da aplicação que gerencia tarefas e estado da UI
+ * @module App
+ */
+
+/**
+ * Componente App principal
+ * @component
+ * @returns {JSX.Element} O componente App renderizado
+ */
+function App() { ... }
+
+
+## 💬 Observações finais
+
+Esse projeto foi desenvolvido com o objetivo de praticar conceitos fundamentais de React, organização de código, testes unitários e documentação técnica.
+Mesmo sendo uma aplicação simples, a estrutura reflete boas práticas de desenvolvimento front-end.
