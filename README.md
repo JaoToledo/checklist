@@ -15,7 +15,7 @@ Feito com **React**, testado com **Vitest**, e documentado com **JSDoc**.
   
 ## ⚙️ Tecnologias utilizadas
 
-React (com Hooks)
+React 
 
 TypeScript
 
